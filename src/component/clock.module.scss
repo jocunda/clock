@@ -118,12 +118,15 @@
 }
 
 .timeContainerMoveUp {
-    transform: translateY(-110%);
+    transform: translateY(-120%);
+
+    @include respond(small) {
+        transform: translateY(-140%);
+    }
 
 }
 
 .positionContainer {
-
 
     @include respond(large) {
         display: flex;

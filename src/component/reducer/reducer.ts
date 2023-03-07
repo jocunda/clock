@@ -31,6 +31,7 @@ function reducer(state: State, action: Action) {
                 author: ""
             }
         case ActionType.timeSuccess:
+            //get hours in number format
             const hours: number = parseInt(action.payload?.time.substring(11, 16).split(":")[0]);
             if (hours >= 5 && hours < 12) {
                 state.greeting = "GOOD MORNING";

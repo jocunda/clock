@@ -16,6 +16,7 @@ export default function Clock() {
     const [state, dispatch] = useReducer(reducer, initialState)
     const [showMore, setShowMore] = useState<boolean>(false)
 
+    //change background
     const classSelector = () => {
         switch (state.greeting) {
             case "GOOD DAY": return cx(styles.clockContainer, styles.clockback1)
@@ -26,6 +27,7 @@ export default function Clock() {
         }
     }
 
+    //get time and location API
     useEffect(() => {
         getTime();
     }, [])
