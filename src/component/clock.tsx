@@ -5,10 +5,11 @@ import cx from 'classnames'
 import { WiSunrise } from 'react-icons/wi'
 import { BsMoonFill, BsSun } from 'react-icons/bs'
 import { IoIosArrowDropdownCircle, IoIosArrowDropupCircle } from 'react-icons/io'
+import Quotes from './quotes'
 
 
 export default function Clock() {
-    const [daystatus, setDaystatus] = useState<number>(1)
+    const [daystatus, setDaystatus] = useState<number>(0)
     const [showMore, setShowMore] = useState<boolean>(false)
 
     const classselector = () => {
@@ -23,10 +24,7 @@ export default function Clock() {
 
     return <>
         <div className={classselector()}>
-            <div className={styles.quotesContainer}>
-                <p className={styles.quotes}>"Aute consequat consequat dolor voluptate aliquip aliqua dolor sunt. Labore cupidatat velit quis eu aute dolore amet consectetur qui. Enim nostrud do fugiat pariatur amet sit consequat fugiat non eiusmod sit adipisicing. Irure laboris aliqua ullamco ad et eu minim exercitation."</p>
-                <p className={styles.author}>Name Author</p>
-            </div>
+            <Quotes />
             <div className={showMore ? cx(styles.timeContainer, styles.timeContainerMoveUp) : styles.timeContainer}>
                 <div className={styles.greetingContainer}>
                     <p className={styles.greetingsWord}><WiSunrise className={styles.greetingIcon} />Good morning</p>
