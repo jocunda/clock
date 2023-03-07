@@ -12,6 +12,7 @@ const initialState: State = {
     city: null,
     country: null,
     timeZone: null,
+    greeting: "",
 }
 
 
@@ -30,6 +31,15 @@ function reducer(state: State, action: Action) {
                 author: ""
             }
         case ActionType.timeSuccess:
+            const hours: number = parseInt(action.payload?.time.substring(11, 16).split(":")[0]);
+            if (hours >= 5 && hours < 12) {
+                state.greeting = "GOOD MORNING";
+            } else if (hours >= 12 && hours < 18) {
+                state.greeting = "GOOD DAY";
+            } else {
+                state.greeting = "GOOD EVENING";
+            }
+
             return {
                 ...state,
                 time: action.payload?.time,

@@ -9,6 +9,7 @@ export type State = {
     city?: any,
     country?: any,
     timeZone?: any,
+    greeting?: string | undefined
 }
 
 export enum ActionType {
