@@ -1,13 +1,14 @@
 import axios from 'axios';
-import styles from './clock.module.scss'
-import { MdOutlineRefresh } from 'react-icons/md'
 import { useEffect, useReducer } from 'react';
 import { initialState, reducer } from './reducer/reducer';
 import { ActionType } from '../types/type';
+import styles from './clock.module.scss'
+import { MdOutlineRefresh } from 'react-icons/md'
 
 export default function Quotes() {
     const [state, dispatch] = useReducer(reducer, initialState)
 
+    //get quote from API
     useEffect(() => {
         getData();
     }, []);
@@ -33,7 +34,7 @@ export default function Quotes() {
 
     return <>
         <div className={styles.quotesContainer}>
-            <div>
+            <div className={styles.dataContainer}>
                 <p className={styles.quotes}>{state.quote}</p>
                 <p className={styles.author}>{state.author}</p>
             </div>

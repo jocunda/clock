@@ -1,11 +1,21 @@
 export type State = {
-    quote: any,
-    author: any
+    quote?: any,
+    author?: any,
+    time?: any,
+    abbreviation?: any,
+    dayOfWeek?: any,
+    dayOfYear?: any,
+    weekNum?: any,
+    city?: any,
+    country?: any,
+    timeZone?: any,
 }
 
 export enum ActionType {
     quoteSuccess = "quoteSuccess",
     quoteFailed = "quoteFailed",
+    timeSuccess = "timeSuccess",
+    locationSuccess = "locationSuccess",
 }
 
 export type Action = {

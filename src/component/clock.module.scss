@@ -41,6 +41,14 @@
     align-items: center;
     gap: 10px;
 
+    & .dataContainer {
+        width: 450px;
+
+        @include respond(small) {
+            width: 250px;
+        }
+    }
+
     & .author {
         font-weight: 700;
     }
