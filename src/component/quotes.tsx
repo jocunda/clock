@@ -11,6 +11,11 @@ export default function Quotes() {
     //get quote from API
     useEffect(() => {
         getData();
+        //get quote data from API every half minutes
+        const intervalId = setInterval(() => {
+            getData();
+        }, 30000);
+        return () => clearInterval(intervalId);
     }, []);
 
     const getData = async () => {
