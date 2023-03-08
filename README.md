@@ -1,19 +1,17 @@
 # Clock
 
 Intermediate challenge from Frontend Mentor, which requirement is to using external APIs to set the data based on the visitor's location and generate random programming quotes.
-Your users should be able to:
-
-View the optimal layout for the site depending on their device's screen size
-See hover states for all interactive elements on the page
-View the current time and location information based on their IP address
-View additional information about the date and time in the expanded state
-Be shown the correct greeting and background image based on the time of day they're visiting the site
-Generate random programming quotes by clicking the refresh icon near the quote
 
 - 🍞 Framework : React 18.2.0
 - 🥪 Library : Axios, Moment-Timezone, React-Icon, Classname
-- 🥨 API : WorldTimeAPI, ipAPI, API Quote
+- 🥨 API : [WorldTimeAPI](http://worldtimeapi.org/ "WorldTimeAPI"), [ipAPI](https://ipapi.co/ "ipAPI"), [API Quote](https://api.quotable.io "Quotable")
 
+**Features**
+- Have RWD/Responsive Web Design that can render well on variety of screen size 
+- Generate random programming quotes with refresh icon
+- Shown the correct greeting and background based on time visitor visit the site
+- View current time and location based on IP address
+- View additional information about timezone, date and time in expanded state
 
 **Web Layout**
 
