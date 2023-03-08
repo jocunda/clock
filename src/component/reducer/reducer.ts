@@ -1,5 +1,16 @@
 import { State, Action, ActionType } from '../../types/type'
 
+//select greeting based on hours
+function getGreeting(time: any): string {
+    const hours: number = parseInt(time.substring(11, 16).split(":")[0]);
+    if (hours >= 5 && hours < 12) {
+        return "GOOD MORNING";
+    } else if (hours >= 12 && hours < 18) {
+        return "GOOD DAY";
+    } else {
+        return "GOOD EVENING";
+    }
+}
 
 const initialState: State = {
     quote: "",
@@ -14,7 +25,6 @@ const initialState: State = {
     timeZone: null,
     greeting: "",
 }
-
 
 function reducer(state: State, action: Action) {
     switch (action.type) {
@@ -31,16 +41,6 @@ function reducer(state: State, action: Action) {
                 author: ""
             }
         case ActionType.timeSuccess:
-            //get hours in number format
-            const hours: number = parseInt(action.payload?.time.substring(11, 16).split(":")[0]);
-            if (hours >= 5 && hours < 12) {
-                state.greeting = "GOOD MORNING";
-            } else if (hours >= 12 && hours < 18) {
-                state.greeting = "GOOD DAY";
-            } else {
-                state.greeting = "GOOD EVENING";
-            }
-
             return {
                 ...state,
                 time: action.payload?.time,
@@ -48,7 +48,8 @@ function reducer(state: State, action: Action) {
                 dayOfWeek: action.payload?.dayOfWeek,
                 dayOfYear: action.payload?.dayOfYear,
                 weekNum: action.payload?.weekNum,
-                timeZone: action.payload?.timeZone
+                timeZone: action.payload?.timeZone,
+                greeting: getGreeting(action.payload?.time)
             }
         case ActionType.locationSuccess:
             return {
