@@ -19,4 +19,4 @@ Intermediate challenge from Frontend Mentor, which requirement is to using exter
 
 **Mobile Layout**
 
-<img src="https://github.com/jocunda/clock/blob/master/src/assets/layoutImage/2.jpg" width="250px">
+<img src="https://github.com/jocunda/clock/blob/master/src/assets/layoutImage/2.jpg" width="450px">
