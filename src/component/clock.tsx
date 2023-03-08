@@ -29,10 +29,11 @@ export default function Clock() {
 
     //get time and location API
     useEffect(() => {
-        //get time data from API every second
+        getTime();
+        //get time data from API every 59 second
         const intervalId = setInterval(() => {
             getTime();
-        }, 1000);
+        }, 59000);
         return () => clearInterval(intervalId);
     }, [])
 
