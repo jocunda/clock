@@ -79,6 +79,12 @@
         align-items: center;
         font-size: 20px;
 
+        @include respond(small) {
+            font-size: 16px;
+            letter-spacing: 0;
+        }
+
+
         & .greetingsWord {
 
             display: flex;
@@ -103,17 +109,30 @@
         & h1 {
             font-size: 150px;
             margin: 0;
+
+            @include respond(small) {
+                font-size: 100px;
+            }
         }
 
         & p {
             letter-spacing: 0;
             font-size: 25px;
             margin: 0;
+
+            @include respond(small) {
+                font-size: 18px;
+            }
         }
     }
 
     & .locationDetail {
         text-align: left;
+
+        @include respond(small) {
+            font-size: 16px;
+            letter-spacing: 0;
+        }
     }
 }
 
@@ -121,7 +140,7 @@
     transform: translateY(-120%);
 
     @include respond(small) {
-        transform: translateY(-140%);
+        transform: translateY(-190%);
     }
 
 }
